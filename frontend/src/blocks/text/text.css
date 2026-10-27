@@ -1,0 +1,21 @@
+.text {
+  max-width: 800px;
+  margin-inline: auto;
+  padding-block: 56px 24px;
+  text-align: center;
+}
+
+.text__title {
+  margin: 0 0 16px;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text__body {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-muted);
+}

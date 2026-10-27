@@ -1,0 +1,15 @@
+{
+  "name": "stocklogix-landing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "setup": "node scripts/setup.mjs && npm --prefix cms install && npm --prefix frontend install && npm --prefix backend install",
+    "dev": "concurrently -k -n CMS,SITE -c blue,green \"npm --prefix cms run dev\" \"npm --prefix frontend run dev\"",
+    "dev:mock": "concurrently -k -n API,SITE -c yellow,green \"npm --prefix backend run dev\" \"npm --prefix frontend run dev:mock\"",
+    "seed": "npm --prefix cms run seed",
+    "build": "npm --prefix frontend run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

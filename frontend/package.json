@@ -1,0 +1,17 @@
+{
+  "name": "stocklogix-landing-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "dev:mock": "vite --mode mock"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vite": "^8.3.0"
+  }
+}

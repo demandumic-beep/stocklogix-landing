@@ -1,0 +1,68 @@
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 48px var(--gutter);
+  background:
+    linear-gradient(180deg, rgba(var(--bg-rgb), 0.35), var(--color-bg)),
+    var(--hero-bg) center / cover no-repeat;
+}
+
+.hero--full {
+  min-height: 70vh;
+}
+
+.hero--compact {
+  min-height: 40vh;
+}
+
+.hero__card {
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+  max-width: 860px;
+  padding: 40px 32px;
+  border: 1px solid var(--color-line);
+  border-radius: 24px;
+  background: var(--color-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.hero__badge {
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.1;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero--compact .hero__title {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+.hero__subtitle {
+  margin: 0;
+  max-width: 55ch;
+  font-size: 1.1rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}

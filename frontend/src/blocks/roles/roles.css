@@ -1,0 +1,42 @@
+.roles {
+  padding-block: 48px;
+}
+
+.roles__grid {
+  display: grid;
+  gap: 20px;
+}
+
+.role {
+  padding: 28px;
+  border: 1px solid var(--color-line);
+  border-radius: 24px;
+  background: var(--color-surface);
+}
+
+.role__title {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.role__subtitle {
+  margin: 4px 0 0;
+  color: var(--color-muted);
+}
+
+.role__list {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding-left: 20px;
+}
+
+.role__list li::marker {
+  color: var(--color-accent);
+}
+
+@media (min-width: 768px) {
+  .roles__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
