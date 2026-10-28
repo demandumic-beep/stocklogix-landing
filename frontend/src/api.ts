@@ -1,6 +1,6 @@
 import type { Page, Settings } from "./types";
 
-const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
+const API_URL ="https://stocklogix-cms.vercel.app/";
 
 async function getJson<T>(path: string): Promise<T> {
   const res = await fetch(`${API_URL}${path}`);
