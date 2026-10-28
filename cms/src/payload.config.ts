@@ -19,6 +19,13 @@ const dirname = path.dirname(filename)
 const databaseUrl = process.env.DATABASE_URL || 'file:./landing.db'
 const usePostgres = databaseUrl.startsWith('postgres')
 
+const allowedOrigins = [
+  'https://stocklogix-landing.vercel.app',
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+]
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -26,8 +33,12 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  cors: ['https://stocklogix-landing.vercel.app'],
-  serverURL: 'https://stocklogix-cms.vercel.app',
+  cors: allowedOrigins,
+  csrf: allowedOrigins,
+  serverURL:
+    process.env.NODE_ENV === 'production'
+      ? 'https://stocklogix-cms.vercel.app'
+      : 'http://localhost:3000',
   endpoints: [commonEndpoint, pageEndpoint],
   globals: [Common],
   collections: [Users, Media, Pages],
@@ -36,6 +47,7 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
+
   db: usePostgres
     ? postgresAdapter({ pool: { connectionString: databaseUrl } })
     : sqliteAdapter({ client: { url: databaseUrl } }),
